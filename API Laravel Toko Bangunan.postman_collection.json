@@ -1,0 +1,316 @@
+{
+  "info": {
+    "_postman_id": "6c7b252e-d9fd-48ab-9e03-a150e20caca6",
+    "name": "API Laravel Toko Bangunan",
+    "description": "🛠️ RESTful API untuk Sistem Manajemen Toko Bangunan - Mengelola data karyawan, produk, penjualan, dan detail transaksi dengan arsitektur RESTful yang mudah diintegrasikan.\n\n_**Noted: API ini dihit berdasarkan id**_",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37665454"
+  },
+  "item": [
+    {
+      "name": "👥 List Data Semua Karyawan",
+      "description": "📋 Mendapatkan daftar lengkap semua karyawan yang terdaftar dalam sistem - Menampilkan informasi seluruh staff toko",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/karyawan/list-data",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "karyawan",
+            "list-data"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "➕ Tambah Data Karyawan Baru",
+      "description": "👤 Menambahkan karyawan baru ke dalam sistem - Pendaftaran staff baru dengan data lengkap",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"Nama\": \"Stevanus Andika Galih Setiawan\",\r\n    \"Gender\": \"L\",\r\n    \"Sandi\": \"password123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/karyawan/simpan",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "karyawan",
+            "simpan"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "🗑️ Hapus Data Karyawan",
+      "description": "❌ Menghapus data karyawan berdasarkan ID - Menghapus akun staff dari sistem secara permanen",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/karyawan/hapus/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "karyawan",
+            "hapus",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "📦 Lihat Data Produk",
+      "description": "🏷️ Mengambil semua data produk yang tersedia di toko - Menampilkan katalog produk bangunan lengkap dengan stok dan harga",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/produk/list-data",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "produk",
+            "list-data"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "➕ Tambah Data Produk",
+      "description": "🆕 Menambahkan produk baru ke dalam inventori toko - Input produk baru ke sistem dengan detail lengkap",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"Produk\": \"kuas\",\r\n    \"Harga\": 5000,\r\n    \"Stok\": 20\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/produk/simpan",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "produk",
+            "simpan"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "🗑️ Hapus Data Produk",
+      "description": "❌ Menghapus produk dari inventori berdasarkan ID - Menghapus produk yang sudah tidak tersedia atau tidak lagi dijual",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/produk/hapus/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "produk",
+            "hapus",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "💰 List Data Penjualan",
+      "description": "📊 Mendapatkan riwayat semua transaksi penjualan - Melacak seluruh transaksi yang pernah dilakukan di toko",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/penjualan/list-data",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "penjualan",
+            "list-data"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "💾 Simpan Data Penjualan",
+      "description": "🛒 Membuat transaksi penjualan baru - Inisialisasi transaksi penjualan dengan data waktu dan petugas",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"tgl\": \"2024-01-15 10:00:00\",\r\n    \"pengguna_id\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/penjualan/simpan",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "penjualan",
+            "simpan"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "🔍 Liat List Detail Penjualan",
+      "description": "📝 Melihat detail item dari suatu transaksi penjualan - Melacak produk-produk yang dibeli dalam satu transaksi tertentu",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/penjualan/list-detail/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "penjualan",
+            "list-detail",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "➕ Simpan Detail Penjualan",
+      "description": "🛍️ Menambahkan item produk ke dalam transaksi penjualan - Input produk yang dibeli beserta quantity dan harga ke dalam transaksi",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"penjualan_id\": 1,\r\n    \"produk_id\": 1,\r\n    \"qty\": 2,\r\n    \"harga\": 100000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/penjualan/simpan-detail",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "penjualan",
+            "simpan-detail"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "🔍 Spesifik Detail Penjualan",
+      "description": "📄 Melihat detail spesifik transaksi penjualan - Menampilkan informasi lengkap tentang satu transaksi tertentu",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/penjualan/list-detail/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "penjualan",
+            "list-detail",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "🗑️ Hapus Detail Penjualan",
+      "description": "❌ Menghapus transaksi penjualan berdasarkan ID - Membatalkan transaksi penjualan secara keseluruhan",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/penjualan/hapus/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "penjualan",
+            "hapus",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
